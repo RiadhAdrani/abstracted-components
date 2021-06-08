@@ -1,6 +1,7 @@
 import Border from "../attributes/Border";
 import Selector from "../attributes/Selector";
 import Input from "../base/Input";
+import generateRandomKey from "../RandomKeyGenerator";
 
 const InputBox = ({
      all,
@@ -133,8 +134,9 @@ const InputBox = ({
      isolation,
      id,
      justifyContent,
-     key,
+     key = generateRandomKey(),
      left,
+     lineClamp,
      letterSpacing,
      lineHeight,
      listStyle,
@@ -150,6 +152,7 @@ const InputBox = ({
      marginVertical,
      maxWidth,
      maxHeight,
+     maxLines,
      minHeight,
      minWidth,
      mixBlendMode,
@@ -353,6 +356,7 @@ const InputBox = ({
                justifyContent={justifyContent}
                key={key}
                left={left}
+               lineClamp={lineClamp}
                letterSpacing={letterSpacing}
                lineHeight={lineHeight}
                listStyle={listStyle}
@@ -368,6 +372,7 @@ const InputBox = ({
                marginVertical={marginVertical}
                maxWidth={maxWidth}
                maxHeight={maxHeight}
+               maxLines={maxLines}
                minHeight={minHeight}
                minWidth={minWidth}
                mixBlendMode={mixBlendMode}

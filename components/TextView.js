@@ -1,4 +1,5 @@
 import Text from "../base/Text";
+import generateRandomKey from "../RandomKeyGenerator";
 
 const TextView = ({
      all,
@@ -126,8 +127,9 @@ const TextView = ({
      id,
      isolation,
      justifyContent,
-     key,
+     key = generateRandomKey(),
      left,
+     lineClamp,
      letterSpacing,
      lineHeight,
      listStyle,
@@ -143,6 +145,7 @@ const TextView = ({
      marginVertical,
      maxWidth,
      maxHeight,
+     maxLines,
      minHeight,
      minWidth,
      mixBlendMode,
@@ -344,6 +347,7 @@ const TextView = ({
                justifyContent={justifyContent}
                key={key}
                left={left}
+               lineClamp={lineClamp}
                letterSpacing={letterSpacing}
                lineHeight={lineHeight}
                listStyle={listStyle}
@@ -359,6 +363,7 @@ const TextView = ({
                marginVertical={marginVertical}
                maxWidth={maxWidth}
                maxHeight={maxHeight}
+               maxLines={maxLines}
                minHeight={minHeight}
                minWidth={minWidth}
                mixBlendMode={mixBlendMode}

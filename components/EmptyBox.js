@@ -1,4 +1,5 @@
 import Base from "../base/Base";
+import generateRandomKey from "../RandomKeyGenerator";
 
 const Empty = ({
      all,
@@ -129,8 +130,9 @@ const Empty = ({
      isolation,
      id,
      justifyContent,
-     key,
+     key = generateRandomKey(),
      left,
+     lineClamp,
      letterSpacing,
      lineHeight,
      listStyle,
@@ -146,6 +148,7 @@ const Empty = ({
      marginVertical,
      maxWidth,
      maxHeight,
+     maxLines,
      minHeight,
      minWidth,
      mixBlendMode,
@@ -352,6 +355,7 @@ const Empty = ({
                listStyleImage={listStyleImage}
                listStylePosition={listStylePosition}
                listStyleType={listStyleType}
+               lineClamp={lineClamp}
                margin={margin}
                marginBottom={marginBottom}
                marginLeft={marginLeft}
@@ -361,6 +365,7 @@ const Empty = ({
                marginVertical={marginVertical}
                maxWidth={maxWidth}
                maxHeight={maxHeight}
+               maxLines={maxLines}
                minHeight={minHeight}
                minWidth={minWidth}
                mixBlendMode={mixBlendMode}

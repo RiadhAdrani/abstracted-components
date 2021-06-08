@@ -1,4 +1,5 @@
 import Image from "../base/Image";
+import generateRandomKey from "../RandomKeyGenerator";
 
 const ImageView = ({
      all,
@@ -131,8 +132,9 @@ const ImageView = ({
      image,
      imageAlt,
      justifyContent,
-     key,
+     key = generateRandomKey(),
      left,
+     lineClamp,
      letterSpacing,
      lineHeight,
      listStyle,
@@ -148,6 +150,7 @@ const ImageView = ({
      marginVertical,
      maxWidth,
      maxHeight,
+     maxLines,
      minHeight,
      minWidth,
      mixBlendMode,
@@ -350,6 +353,7 @@ const ImageView = ({
                justifyContent={justifyContent}
                key={key}
                left={left}
+               lineClamp={lineClamp}
                letterSpacing={letterSpacing}
                lineHeight={lineHeight}
                listStyle={listStyle}
@@ -365,6 +369,7 @@ const ImageView = ({
                marginVertical={marginVertical}
                maxWidth={maxWidth}
                maxHeight={maxHeight}
+               maxLines={maxLines}
                minHeight={minHeight}
                minWidth={minWidth}
                mixBlendMode={mixBlendMode}

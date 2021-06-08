@@ -2,6 +2,7 @@ import Cursor from "../attributes/Cursor";
 import Selector from "../attributes/Selector";
 import UserSelect from "../attributes/UserSelect";
 import Clickable from "../base/Clickable";
+import generateRandomKey from "../RandomKeyGenerator";
 
 const Button = ({
      all,
@@ -104,7 +105,7 @@ const Button = ({
      id,
      isolation,
      justifyContent,
-     key,
+     key = generateRandomKey(),
      left,
      letterSpacing,
      lineHeight,
@@ -121,6 +122,7 @@ const Button = ({
      marginVertical,
      maxWidth,
      maxHeight,
+     maxLines,
      minHeight,
      minWidth,
      mixBlendMode,
@@ -326,6 +328,7 @@ const Button = ({
                marginVertical={marginVertical}
                maxWidth={maxWidth}
                maxHeight={maxHeight}
+               maxLines={maxLines}
                minHeight={minHeight}
                minWidth={minWidth}
                mixBlendMode={mixBlendMode}

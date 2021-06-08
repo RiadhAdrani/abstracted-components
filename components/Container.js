@@ -1,4 +1,5 @@
 import Base from "../base/Base";
+import generateRandomKey from "../RandomKeyGenerator";
 
 const Container = ({
      all,
@@ -129,8 +130,9 @@ const Container = ({
      isolation,
      id,
      justifyContent,
-     key,
+     key = generateRandomKey(),
      left,
+     lineClamp,
      letterSpacing,
      lineHeight,
      listStyle,
@@ -146,6 +148,7 @@ const Container = ({
      marginVertical,
      maxWidth,
      maxHeight,
+     maxLines,
      minHeight,
      minWidth,
      mixBlendMode,
@@ -346,6 +349,7 @@ const Container = ({
                justifyContent={justifyContent}
                key={key}
                left={left}
+               lineClamp={lineClamp}
                letterSpacing={letterSpacing}
                lineHeight={lineHeight}
                listStyle={listStyle}
@@ -361,6 +365,7 @@ const Container = ({
                marginVertical={marginVertical}
                maxWidth={maxWidth}
                maxHeight={maxHeight}
+               maxLines={maxLines}
                minHeight={minHeight}
                minWidth={minWidth}
                mixBlendMode={mixBlendMode}

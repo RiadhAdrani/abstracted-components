@@ -125,6 +125,8 @@ import Clip from "./Clip";
 import TransitionDelay from "./TransitionDelay";
 import TransitionDuration from "./TransitionDuration";
 import TransitionTimingFunction from "./TransitionTimingFunction";
+import MaxLines from "./MaxLines";
+import LineClamp from "./LineClamp";
 
 class PropUtil {
      /**
@@ -818,6 +820,9 @@ class PropUtil {
                transition.timingFunction
           );
 
+          const maxLines = MaxLines.checkProperty(props.maxLines, all, "none");
+          const lineClamp = LineClamp.checkProperty(props.lineClamp, all, "all");
+
           // CSS -------------------------------------------------------------------------------------------------------------------------
           // CSS -------------------------------------------------------------------------------------------------------------------------
 
@@ -920,6 +925,7 @@ class PropUtil {
                          grid-template-columns: ${gridTemplateColumns};
                          width: ${width};
                          max-width: ${maxWidth};
+                         max-lines: ${maxLines};
                          min-width: ${minWidth};
                          height: ${height};
                          max-height: ${maxHeight};
@@ -928,6 +934,7 @@ class PropUtil {
                          right: ${right};
                          bottom: ${bottom};
                          left: ${left};
+                         -webkit-line-clamp:${lineClamp};
                          position: -webkit ${position};
                          position: ${position};
                          padding-top: ${paddingTop};
