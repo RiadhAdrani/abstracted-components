@@ -427,7 +427,13 @@ class PropUtil {
           );
 
           // BORDER RADIUS
-          const borderRadius = props.borderRadius ? props.borderRadius : {};
+          // const borderRadius = props.borderRadius ? props.borderRadius : {};
+
+          const borderRadius = Length.isValidInput(props.borderRadius)
+               ? Length.radiusToJSON(props.borderRadius)
+               : props.borderRadius
+               ? props.borderRadius
+               : {};
 
           const borderTopRightRadius = BorderRadius.checkProperty(
                props.borderTopRightRadius,

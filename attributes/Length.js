@@ -67,6 +67,48 @@ class Length {
           return {};
      }
 
+     static radiusToJSON(input) {
+          const arr = input.split(" ");
+
+          if (arr.length === 1) {
+               return {
+                    topRight: arr[0],
+                    bottomRight: arr[0],
+                    bottomLeft: arr[0],
+                    topLeft: arr[0],
+               };
+          }
+
+          if (arr.length === 2) {
+               return {
+                    topRight: arr[0],
+                    bottomRight: arr[1],
+                    bottomLeft: arr[0],
+                    topLeft: arr[1],
+               };
+          }
+
+          if (arr.length === 3) {
+               return {
+                    topRight: arr[0],
+                    bottomRight: arr[1],
+                    bottomLeft: arr[2],
+                    topLeft: "0px",
+               };
+          }
+
+          if (arr.length === 4) {
+               return {
+                    topRight: arr[0],
+                    bottomRight: arr[1],
+                    bottomLeft: arr[2],
+                    topLeft: arr[3],
+               };
+          }
+
+          return {};
+     }
+
      static isValidInput(inputLength) {
           const regex =
                /^((-)?(\d+)((.)(\d+))?(cm|mm|pt|pc|px|em|ex|ch|rem|vw|vh|vmin|vmax|fr|%))(( )(-)?(\d+)((.)(\d+))?(cm|mm|pt|pc|px|em|ex|ch|rem|vw|vh|vmin|vmax|fr|%)){0,3}$/;
