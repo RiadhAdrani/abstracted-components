@@ -95,15 +95,6 @@ const ImageView = ({
      flexWrap,
      flexFlow,
      flexGrow,
-     font,
-     fontSize,
-     fontFamily,
-     fontStyle,
-     fontWeight,
-     fontKerning,
-     fontStretch,
-     fontVariant,
-     fontVariantCaps,
      focus,
      gap,
      grid,
@@ -187,18 +178,6 @@ const ImageView = ({
      scrollBehavior,
      tabSize,
      tabLayout,
-     textColor,
-     textAlign,
-     textAlignLast,
-     textDecoration,
-     textDecorationColor,
-     textDecorationLine,
-     textDecorationStyle,
-     textIndent,
-     textJustify,
-     textOverflow,
-     textShadow,
-     textTransform,
      top,
      transform,
      transformOrigin,
@@ -291,7 +270,6 @@ const ImageView = ({
                clear={clear}
                className={className}
                clip={clip}
-               color={textColor}
                columnCount={columnCount}
                columnFill={columnFill}
                columnRule={columnRule}
@@ -314,15 +292,6 @@ const ImageView = ({
                flexWrap={flexWrap}
                flexFlow={flexFlow}
                flexGrow={flexGrow}
-               font={font}
-               fontSize={fontSize}
-               fontFamily={fontFamily}
-               fontStyle={fontStyle}
-               fontWeight={fontWeight}
-               fontKerning={fontKerning}
-               fontStretch={fontStretch}
-               fontVariant={fontVariant}
-               fontVariantCaps={fontVariantCaps}
                focus={focus}
                gap={gap}
                grid={grid}
@@ -408,18 +377,6 @@ const ImageView = ({
                scrollBehavior={scrollBehavior}
                tabSize={tabSize}
                tabLayout={tabLayout}
-               textColor={textColor}
-               textAlign={textAlign}
-               textAlignLast={textAlignLast}
-               textDecoration={textDecoration}
-               textDecorationColor={textDecorationColor}
-               textDecorationLine={textDecorationLine}
-               textDecorationStyle={textDecorationStyle}
-               textIndent={textIndent}
-               textJustify={textJustify}
-               textOverflow={textOverflow}
-               textShadow={textShadow}
-               textTransform={textTransform}
                top={top}
                transform={transform}
                transformOrigin={transformOrigin}
