@@ -22,7 +22,7 @@ const Button = ({
      backfaceVisibility,
      borderImage,
      background,
-     backgroundAttachement,
+     backgroundAttachment,
      backgroundBlendMode,
      backgroundClip,
      backgroundColor,
@@ -222,7 +222,7 @@ const Button = ({
                backfaceVisibility={backfaceVisibility}
                background={background}
                backgroundColor={backgroundColor}
-               backgroundAttachement={backgroundAttachement}
+               backgroundAttachment={backgroundAttachment}
                backgroundBlendMode={backgroundBlendMode}
                backgroundClip={backgroundClip}
                backgroundImage={backgroundImage}

@@ -22,7 +22,7 @@ const InputBox = ({
      backfaceVisibility,
      borderImage,
      background,
-     backgroundAttachement,
+     backgroundAttachment,
      backgroundBlendMode,
      backgroundClip,
      backgroundColor,
@@ -242,7 +242,7 @@ const InputBox = ({
                backfaceVisibility={backfaceVisibility}
                background={background}
                backgroundColor={backgroundColor}
-               backgroundAttachement={backgroundAttachement}
+               backgroundAttachment={backgroundAttachment}
                backgroundBlendMode={backgroundBlendMode}
                backgroundClip={backgroundClip}
                backgroundImage={backgroundImage}

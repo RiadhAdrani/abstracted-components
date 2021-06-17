@@ -21,7 +21,6 @@ class BorderRadius extends Default {
      }
 
      static checkProperty(prop, backup = this.Initial, backup2 = this.Initial) {
-          console.log(`Border Radius : ${prop}`);
           return PropUtil.isLengthProperty(prop, this.defaultValuesList, backup, backup2);
      }
 }

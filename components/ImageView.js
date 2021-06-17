@@ -20,7 +20,7 @@ const ImageView = ({
      backfaceVisibility,
      borderImage,
      background,
-     backgroundAttachement,
+     backgroundAttachment,
      backgroundBlendMode,
      backgroundClip,
      backgroundColor,
@@ -218,7 +218,7 @@ const ImageView = ({
                backfaceVisibility={backfaceVisibility}
                background={background}
                backgroundColor={backgroundColor}
-               backgroundAttachement={backgroundAttachement}
+               backgroundAttachment={backgroundAttachment}
                backgroundBlendMode={backgroundBlendMode}
                backgroundClip={backgroundClip}
                backgroundImage={backgroundImage}

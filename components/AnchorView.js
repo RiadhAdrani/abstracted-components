@@ -20,7 +20,7 @@ const AnchorView = ({
      backfaceVisibility,
      borderImage,
      background,
-     backgroundAttachement,
+     backgroundAttachment,
      backgroundBlendMode,
      backgroundClip,
      backgroundColor,
@@ -238,7 +238,7 @@ const AnchorView = ({
                backfaceVisibility={backfaceVisibility}
                background={background}
                backgroundColor={backgroundColor}
-               backgroundAttachement={backgroundAttachement}
+               backgroundAttachment={backgroundAttachment}
                backgroundBlendMode={backgroundBlendMode}
                backgroundClip={backgroundClip}
                backgroundImage={backgroundImage}

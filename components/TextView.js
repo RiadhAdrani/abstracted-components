@@ -20,7 +20,7 @@ const TextView = ({
      backfaceVisibility,
      borderImage,
      background,
-     backgroundAttachement,
+     backgroundAttachment,
      backgroundBlendMode,
      backgroundClip,
      backgroundColor,
@@ -235,7 +235,7 @@ const TextView = ({
                backfaceVisibility={backfaceVisibility}
                background={background}
                backgroundColor={backgroundColor}
-               backgroundAttachement={backgroundAttachement}
+               backgroundAttachment={backgroundAttachment}
                backgroundBlendMode={backgroundBlendMode}
                backgroundClip={backgroundClip}
                backgroundImage={backgroundImage}
