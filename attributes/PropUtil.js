@@ -315,8 +315,6 @@ class PropUtil {
                all
           );
 
-          console.log(backgroundAttachment);
-
           // BORDER SETTINGS
           const border = props.border ? props.border : {};
 

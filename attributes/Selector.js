@@ -504,7 +504,9 @@ class Selector {
           );
 
           // BORDER RADIUS
-          const _borderRadius = borderRadius
+          const _borderRadius = Length.isValidInput(borderRadius)
+               ? Length.radiusToJSON(borderRadius)
+               : borderRadius
                ? borderRadius
                : {
                       topRight: BorderRadius.Initial,

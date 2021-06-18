@@ -2927,6 +2927,4 @@ class FontAwesomeIcons {
      static _500px = _500px;
 }
 
-console.log(_500px);
-
 export default FontAwesomeIcons;
