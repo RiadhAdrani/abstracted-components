@@ -32,7 +32,7 @@ const Image = (props) => {
           ${animations}
      `;
 
-     // console.log(props.hover);
+     console.log(animations);
 
      return (
           <Comp

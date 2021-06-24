@@ -1,7 +1,7 @@
 import Default from "./Default";
 
 class Animation extends Default {
-     static new(
+     static new({
           name,
           duration,
           timingFunction,
@@ -9,8 +9,8 @@ class Animation extends Default {
           iterationCount,
           direction,
           fillMode,
-          playState
-     ) {
+          playState,
+     }) {
           return {
                name: `${name}`,
                duration: `${duration}`,
