@@ -8,6 +8,8 @@ const Base = (props) => {
 
      const animations = `${props.animations}`;
 
+     const mediaQuery = `${props.mediaQuery}`;
+
      const Comp = styled.div`
           ${content}
 
@@ -29,7 +31,9 @@ const Base = (props) => {
           ::before {
           }
 
-          ${animations}
+          ${animations};
+
+          ${mediaQuery};
      `;
 
      // console.log(props.hover);

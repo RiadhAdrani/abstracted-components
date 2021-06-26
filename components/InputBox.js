@@ -156,6 +156,7 @@ const InputBox = ({
      minHeight,
      minWidth,
      mixBlendMode,
+     mediaQuery,
      objectFit,
      objectPosition,
      opacity,
@@ -376,6 +377,7 @@ const InputBox = ({
                minHeight={minHeight}
                minWidth={minWidth}
                mixBlendMode={mixBlendMode}
+               mediaQuery={mediaQuery}
                objectFit={objectFit}
                objectPosition={objectPosition}
                opacity={opacity}

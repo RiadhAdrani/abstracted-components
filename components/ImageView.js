@@ -145,6 +145,7 @@ const ImageView = ({
      minHeight,
      minWidth,
      mixBlendMode,
+     mediaQuery,
      objectFit,
      objectPosition,
      opacity,
@@ -342,6 +343,7 @@ const ImageView = ({
                minHeight={minHeight}
                minWidth={minWidth}
                mixBlendMode={mixBlendMode}
+               mediaQuery={mediaQuery}
                objectFit={objectFit}
                objectPosition={objectPosition}
                opacity={opacity}

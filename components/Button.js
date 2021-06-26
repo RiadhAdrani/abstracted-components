@@ -126,6 +126,7 @@ const Button = ({
      minHeight,
      minWidth,
      mixBlendMode,
+     mediaQuery,
      objectFit,
      objectPosition,
      opacity,
@@ -332,6 +333,7 @@ const Button = ({
                minHeight={minHeight}
                minWidth={minWidth}
                mixBlendMode={mixBlendMode}
+               mediaQuery={mediaQuery}
                objectFit={objectFit}
                objectPosition={objectPosition}
                opacity={opacity}

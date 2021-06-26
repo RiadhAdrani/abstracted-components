@@ -8,6 +8,8 @@ const Anchor = (props) => {
 
      const animations = `${props.animations}`;
 
+     const mediaQuery = `${props.mediaQuery}`;
+
      const Comp = styled.a`
           ${content}
 
@@ -29,7 +31,9 @@ const Anchor = (props) => {
           ::before {
           }
 
-          ${animations}
+          ${animations};
+
+          ${mediaQuery};
      `;
 
      // console.log(props.hover);

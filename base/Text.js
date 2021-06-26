@@ -8,6 +8,8 @@ const Text = (props) => {
 
      const animations = `${props.animations}`;
 
+     const mediaQuery = `${props.mediaQuery ? props.mediaQuery.join("") : ""}`;
+
      const Comp = styled.p`
           ${content}
 
@@ -29,8 +31,12 @@ const Text = (props) => {
           ::before {
           }
 
-          ${animations}
+          ${animations};
+
+          ${mediaQuery};
      `;
+
+     // console.log(mediaQuery);
 
      // console.log(props.hover);
 

@@ -11,6 +11,8 @@ const Input = (props) => {
 
      const animations = `${props.animations}`;
 
+     const mediaQuery = `${props.mediaQuery}`;
+
      const Comp = styled.input`
           ${content}
 
@@ -36,7 +38,9 @@ const Input = (props) => {
                ${props.hintStyle}
           }
 
-          ${animations}
+          ${animations};
+
+          ${mediaQuery};
      `;
 
      // console.log(props.hover);

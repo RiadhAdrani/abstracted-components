@@ -8,6 +8,8 @@ const Image = (props) => {
 
      const animations = `${props.animations}`;
 
+     const mediaQuery = `${props.mediaQuery}`;
+
      const Comp = styled.img.attrs({ src: props.image })`
           ${content}
 
@@ -29,10 +31,12 @@ const Image = (props) => {
           ::before {
           }
 
-          ${animations}
+          ${animations};
+
+          ${mediaQuery};
      `;
 
-     console.log(animations);
+     // console.log(animations);
 
      return (
           <Comp

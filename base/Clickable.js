@@ -8,6 +8,8 @@ const Clickable = (props) => {
 
      const animations = `${props.animations}`;
 
+     const mediaQuery = `${props.mediaQuery}`;
+
      const Comp = styled.button`
           ${content}
 
@@ -29,7 +31,9 @@ const Clickable = (props) => {
           ::before {
           }
 
-          ${animations}
+          ${animations};
+
+          ${mediaQuery};
      `;
 
      // console.log(props.hover);

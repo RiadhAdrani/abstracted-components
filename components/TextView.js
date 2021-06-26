@@ -149,6 +149,7 @@ const TextView = ({
      minHeight,
      minWidth,
      mixBlendMode,
+     mediaQuery,
      objectFit,
      objectPosition,
      opacity,
@@ -367,6 +368,7 @@ const TextView = ({
                minHeight={minHeight}
                minWidth={minWidth}
                mixBlendMode={mixBlendMode}
+               mediaQuery={mediaQuery}
                objectFit={objectFit}
                objectPosition={objectPosition}
                opacity={opacity}
