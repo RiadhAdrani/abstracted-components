@@ -8,7 +8,13 @@ const Text = (props) => {
 
      const animations = `${props.animations}`;
 
-     const mediaQuery = `${props.mediaQuery ? props.mediaQuery.join("") : ""}`;
+     const mediaQuery = `${
+          props.mediaQuery
+               ? Array.isArray(props.mediaQuery)
+                    ? props.mediaQuery.join("")
+                    : props.mediaQuery
+               : ""
+     }`;
 
      const Comp = styled.p`
           ${content}
