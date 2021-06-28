@@ -1,8 +1,11 @@
 import styled from "styled-components";
-import PropUtil from "../attributes/PropUtil";
+import generateRandomKey from "../RandomKeyGenerator";
+import Selector from "../attributes/Selector";
 
 const Text = (props) => {
-     const content = `{${PropUtil.getCSS(props)}}`;
+     // const content = `{${PropUtil.getCSS(props)}}`;
+
+     const css = `{${Selector.new(props)}}`;
 
      // console.log(content);
 
@@ -17,7 +20,7 @@ const Text = (props) => {
      }`;
 
      const Comp = styled.p`
-          ${content}
+          ${css}
 
           :hover {
                ${props.hover}
@@ -59,7 +62,7 @@ const Text = (props) => {
                }}
                key={props.key}
                className={props.className}
-               id={props.id}
+               id={props.id ? props.id : generateRandomKey()}
           >
                {props.children}
           </Comp>

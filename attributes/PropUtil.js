@@ -127,6 +127,7 @@ import TransitionDuration from "./TransitionDuration";
 import TransitionTimingFunction from "./TransitionTimingFunction";
 import MaxLines from "./MaxLines";
 import LineClamp from "./LineClamp";
+import Selector from "./Selector";
 
 class PropUtil {
      /**
@@ -191,6 +192,12 @@ class PropUtil {
           return this.isProperty(prop, propList, backup, backup2);
      }
 
+     /**
+      * Your service will be remembered.
+      * @deprecated
+      * @param {*} props
+      * @returns
+      */
      static getCSS(props) {
           if (props.props) props = props.props;
 

@@ -1,9 +1,12 @@
 import { useState } from "react";
 import styled from "styled-components";
-import PropUtil from "../attributes/PropUtil";
+import generateRandomKey from "../RandomKeyGenerator";
+import Selector from "../attributes/Selector";
 
 const Input = (props) => {
-     const content = `{${PropUtil.getCSS(props)}}`;
+     // const content = `{${PropUtil.getCSS(props)}}`;
+
+     const css = `{${Selector.new(props)}}`;
 
      // console.log(content);
 
@@ -20,7 +23,7 @@ const Input = (props) => {
      }`;
 
      const Comp = styled.input`
-          ${content}
+          ${css}
 
           :hover {
                ${props.hover}
@@ -68,7 +71,7 @@ const Input = (props) => {
                }}
                key={props.key}
                className={props.className}
-               id={props.id}
+               id={props.id ? props.id : generateRandomKey()}
                type={props.type}
                placeholder={props.hint}
                onChange={(x) => {
