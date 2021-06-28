@@ -1,4 +1,5 @@
 import Border from "../attributes/Border";
+import Outline from "../attributes/Outline";
 import Selector from "../attributes/Selector";
 import Input from "../base/Input";
 import generateRandomKey from "../RandomKeyGenerator";
@@ -130,7 +131,7 @@ const InputBox = ({
      hangingPunctuation,
      height,
      hyphens,
-     hover,
+     hover = Selector.new({ outline: "none" }),
      isolation,
      id,
      justifyContent,

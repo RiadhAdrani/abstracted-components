@@ -1129,10 +1129,10 @@ class Selector {
           ${objectFit && `object-fit: ${_objectFit};`};
           ${objectPosition && `object-position: ${_objectPosition};`};
           ${order && `order: ${_order};`};
-          ${outlineColor && `outline-color: ${_outlineColor};`};
-          ${outlineOffset && `outline-offset: ${_outlineOffset};`} ;
-          ${outlineStyle && `outline-style: ${_outlineStyle};`};
-          ${outlineWidth && `outline-width: ${_outlineWidth};`};
+          ${(outlineColor || outline) && `outline-color: ${_outlineColor};`};
+          ${(outlineOffset || outline) && `outline-offset: ${_outlineOffset};`} ;
+          ${(outlineStyle || outline) && `outline-style: ${_outlineStyle};`};
+          ${(outlineWidth || outline) && `outline-width: ${_outlineWidth};`};
           ${overflow && `overflow: ${_overflow};`};
           ${overflowX && `overflow-x: ${_overflowX};`};
           ${overflowY && `overflow-y: ${_overflowY};`};
