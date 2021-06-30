@@ -86,6 +86,7 @@ const Empty = ({
      cursor,
      direction,
      display,
+     debugLogCSS,
      emptyCells,
      filter,
      flex,
@@ -304,6 +305,7 @@ const Empty = ({
                cursor={cursor}
                direction={direction}
                display={display}
+               debugLogCSS={debugLogCSS}
                emptyCells={emptyCells}
                filter={filter}
                flex={flex}

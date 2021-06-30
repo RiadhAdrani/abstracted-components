@@ -84,6 +84,7 @@ const TextView = ({
      content,
      cursor = "inherit",
      direction,
+     debugLogCSS = false,
      emptyCells,
      filter,
      flex,
@@ -301,6 +302,7 @@ const TextView = ({
                content={content}
                cursor={cursor}
                direction={direction}
+               debugLogCSS={debugLogCSS}
                display={"initial"}
                emptyCells={emptyCells}
                filter={filter}

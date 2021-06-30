@@ -85,6 +85,7 @@ const ImageView = ({
      content,
      cursor,
      direction,
+     debugLogCSS = false,
      display,
      emptyCells,
      filter,
@@ -284,6 +285,7 @@ const ImageView = ({
                cursor={cursor}
                direction={direction}
                display={display}
+               debugLogCSS={debugLogCSS}
                emptyCells={emptyCells}
                filter={filter}
                flex={flex}

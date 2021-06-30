@@ -1,5 +1,4 @@
 import Border from "../attributes/Border";
-import Outline from "../attributes/Outline";
 import Selector from "../attributes/Selector";
 import Input from "../base/Input";
 import generateRandomKey from "../RandomKeyGenerator";
@@ -91,6 +90,7 @@ const InputBox = ({
      cursor,
      direction,
      display = "flex",
+     debugLogCSS = false,
      emptyCells,
      filter,
      flex,
@@ -310,6 +310,7 @@ const InputBox = ({
                cursor={cursor}
                direction={direction}
                display={display}
+               debugLogCSS={debugLogCSS}
                emptyCells={emptyCells}
                filter={filter}
                flex={flex}
