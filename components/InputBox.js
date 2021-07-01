@@ -90,6 +90,7 @@ const InputBox = ({
      cursor,
      direction,
      display = "flex",
+     debugLogCSS = false,
      emptyCells,
      filter,
      flex,
@@ -130,7 +131,7 @@ const InputBox = ({
      hangingPunctuation,
      height,
      hyphens,
-     hover,
+     hover = Selector.new({ outline: "none" }),
      isolation,
      id,
      justifyContent,
@@ -309,6 +310,7 @@ const InputBox = ({
                cursor={cursor}
                direction={direction}
                display={display}
+               debugLogCSS={debugLogCSS}
                emptyCells={emptyCells}
                filter={filter}
                flex={flex}

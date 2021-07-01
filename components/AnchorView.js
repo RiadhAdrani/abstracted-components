@@ -86,6 +86,7 @@ const AnchorView = ({
      cursor = "pointer",
      direction,
      display = "flex",
+     debugLogCSS = false,
      emptyCells,
      filter,
      flex,
@@ -304,6 +305,7 @@ const AnchorView = ({
                content={content}
                cursor={cursor}
                direction={direction}
+               debugLogCSS={debugLogCSS}
                display={display}
                emptyCells={emptyCells}
                filter={filter}

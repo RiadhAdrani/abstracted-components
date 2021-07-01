@@ -1,8 +1,11 @@
 import styled from "styled-components";
-import PropUtil from "../attributes/PropUtil";
+import Selector from "../attributes/Selector";
+import generateRandomKey from "../RandomKeyGenerator";
 
 const Anchor = (props) => {
-     const content = `{${PropUtil.getCSS(props)}}`;
+     // const content = `{${PropUtil.getCSS(props)}}`;
+
+     const css = `{${Selector.new(props)}}`;
 
      // console.log(content);
 
@@ -17,7 +20,7 @@ const Anchor = (props) => {
      }`;
 
      const Comp = styled.a`
-          ${content}
+          ${css}
 
           :hover {
                ${props.hover}
@@ -48,7 +51,7 @@ const Anchor = (props) => {
           <Comp
                key={props.key}
                className={props.className}
-               id={props.id}
+               id={props.id ? props.id : generateRandomKey()}
                href={props.link}
                target={props.target}
           >

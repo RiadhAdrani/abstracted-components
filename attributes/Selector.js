@@ -211,6 +211,7 @@ class Selector {
           cursor,
           direction,
           display,
+          debugLogCSS,
           emptyCells,
           filter,
           flex,
@@ -932,264 +933,295 @@ class Selector {
           // CSS -------------------------------------------------------------------------------------------------------------------------
 
           const selectorContent = `
-          ${backgroundColor && `background-color: ${_backgroundColor}`};
-          ${textColor && `color: ${_color} `};
-          ${alignContent && `align-content: ${_alignContent}`};
-          ${alignItems && `align-items: ${_alignItems}`};
-          ${alignSelf && `align-self: ${_alignSelf}`};
+          ${backgroundColor || background ? `background-color: ${_backgroundColor};` : ""}
+          ${textColor ? `color: ${_color};` : ""}
+          ${alignContent ? `align-content: ${_alignContent};` : ""}
+          ${alignItems ? `align-items: ${_alignItems};` : ""}
+          ${alignSelf ? `align-self: ${_alignSelf};` : ""}
           ${
-               backfaceVisibility &&
-               `backface-visibility: ${_backfaceVisibility};
+               backfaceVisibility
+                    ? `backface-visibility: ${_backfaceVisibility};
                -webkit-backface-visibility: ${_backfaceVisibility};`
+                    : ""
           }
           ${
-               (backgroundAttachement || background) &&
-               `background-attachment: ${_backgroundAttachment};`
+               backgroundAttachement || background
+                    ? `background-attachment: ${_backgroundAttachment};`
+                    : ""
           }
           ${
-               (backgroundBlendMode || background) &&
-               `background-blend-mode: ${_backgroundBlendMode};`
+               backgroundBlendMode || background
+                    ? `background-blend-mode: ${_backgroundBlendMode};`
+                    : ""
           }
-          ${(backgroundClip || background) && `background-clip: ${_backgroundClip}`};
-          ${(backgroundImage || background) && `background-image: ${_backgroundImage};`};
-          ${(backgroundOrigin || background) && `background-origin: ${_backgroundOrigin}`};
-          ${(backgroundPosition || background) && `background-position: ${_backgroundPosition}`};
-          ${(backgroundRepeat || background) && `background-repeat: ${_backgroundRepeat}`};
-          ${(backgroundSize || background) && `background-size: ${_backgroundSize};`};
-          ${borderCollapse && `border-collapse: ${_borderCollapse};`};
-          ${borderSpacing && `border-spacing: ${_borderSpacing};`};
+          ${backgroundClip || background ? `background-clip: ${_backgroundClip};` : ""}
+          ${backgroundImage || background ? `background-image: ${_backgroundImage};` : ""}
+          ${backgroundOrigin || background ? `background-origin: ${_backgroundOrigin};` : ""}
+          ${backgroundPosition || background ? `background-position: ${_backgroundPosition};` : ""}
+          ${backgroundRepeat || background ? `background-repeat: ${_backgroundRepeat};` : ""}
+          ${backgroundSize || background ? `background-size: ${_backgroundSize};` : ""}
+          ${borderCollapse ? `border-collapse: ${_borderCollapse};` : ""}
+          ${borderSpacing ? `border-spacing: ${_borderSpacing};` : ""}
           ${
-               (borderTopStyle || border || borderTop || borderStyle) &&
-               `border-top-style: ${_borderTopStyle};`
-          };
+               borderTopStyle || border || borderTop || borderStyle
+                    ? `border-top-style: ${_borderTopStyle};`
+                    : ""
+          }
           ${
-               (borderTopWidth || border || borderTop || borderWidth) &&
-               `border-top-width: ${_borderTopWidth};`
-          };
+               borderTopWidth || border || borderTop || borderWidth
+                    ? `border-top-width: ${_borderTopWidth};`
+                    : ""
+          }
           ${
-               (borderTopColor || border || borderTop || borderColor) &&
-               `border-top-color: ${_borderTopColor};`
-          };
+               borderTopColor || border || borderTop || borderColor
+                    ? `border-top-color: ${_borderTopColor};`
+                    : ""
+          }
           ${
-               (borderRightStyle || border || borderRight || borderStyle) &&
-               `border-right-style: ${_borderRightStyle};`
-          } ;   
+               borderRightStyle || border || borderRight || borderStyle
+                    ? `border-right-style: ${_borderRightStyle};`
+                    : ""
+          } 
           ${
-               (borderRightWidth || border || borderRight || borderWidth) &&
-               `border-right-width: ${_borderRightWidth};`
-          };
+               borderRightWidth || border || borderRight || borderWidth
+                    ? `border-right-width: ${_borderRightWidth};`
+                    : ""
+          }
           ${
-               (borderRightColor || border || borderRight || borderColor) &&
-               `border-right-color: ${_borderRightColor};`
-          } ;
+               borderRightColor || border || borderRight || borderColor
+                    ? `border-right-color: ${_borderRightColor};`
+                    : ""
+          }
           ${
-               (borderBottomStyle || border || borderBottom || borderStyle) &&
-               `border-bottom-style: ${_borderBottomStyle};`
-          };
+               borderBottomStyle || border || borderBottom || borderStyle
+                    ? `border-bottom-style: ${_borderBottomStyle};`
+                    : ""
+          }
           ${
-               (borderBottomWidth || border || borderBottom || borderWidth) &&
-               `border-bottom-width: ${_borderBottomWidth};`
-          };
+               borderBottomWidth || border || borderBottom || borderWidth
+                    ? `border-bottom-width: ${_borderBottomWidth};`
+                    : ""
+          }
           ${
-               (borderBottomColor || border || borderBottom || borderColor) &&
-               `border-bottom-color: ${_borderBottomColor};`
-          };
+               borderBottomColor || border || borderBottom || borderColor
+                    ? `border-bottom-color: ${_borderBottomColor};`
+                    : ""
+          }
           ${
-               (borderLeftStyle || border || borderLeft || borderStyle) &&
-               `border-left-style: ${_borderLeftStyle};`
-          };
+               borderLeftStyle || border || borderLeft || borderStyle
+                    ? `border-left-style: ${_borderLeftStyle};`
+                    : ""
+          }
           ${
-               (borderLeftWidth || border || borderLeft || borderWidth) &&
-               `border-left-width: ${_borderLeftWidth};`
-          };
+               borderLeftWidth || border || borderLeft || borderWidth
+                    ? `border-left-width: ${_borderLeftWidth};`
+                    : ""
+          }
           ${
-               (borderLeftColor || border || borderLeft || borderColor) &&
-               `border-left-color: ${_borderLeftColor};`
-          };
+               borderLeftColor || border || borderLeft || borderColor
+                    ? `border-left-color: ${_borderLeftColor};`
+                    : ""
+          }
           ${
-               (borderTopRightRadius || borderRadius) &&
-               `border-top-right-radius: ${_borderTopRightRadius};`
-          };
+               borderTopRightRadius || borderRadius
+                    ? `border-top-right-radius: ${_borderTopRightRadius};`
+                    : ""
+          }
           ${
-               (borderBottomRightRadius || borderRadius) &&
-               `border-bottom-right-radius: ${_borderBottomRightRadius};`
-          };
+               borderBottomRightRadius || borderRadius
+                    ? `border-bottom-right-radius: ${_borderBottomRightRadius};`
+                    : ""
+          }
           ${
-               (borderBottomLeftRadius || borderRadius) &&
-               `border-bottom-left-radius: ${_borderBottomLeftRadius};`
-          };
+               borderBottomLeftRadius || borderRadius
+                    ? `border-bottom-left-radius: ${_borderBottomLeftRadius};`
+                    : ""
+          }
           ${
-               (borderTopLeftRadius || borderRadius) &&
-               `border-top-left-radius: ${_borderTopLeftRadius};`
-          };
-          ${borderImageOutset && `border-image-outset: ${_borderImageOutset};`};
-          ${borderImageRepeat && `border-image-repeat: ${_borderImageRepeat};`};
-          ${borderImageSlice && `border-image-slice: ${_borderImageSlice};`};
-          ${borderImageWidth && `border-image-width: ${_borderImageWidth};`};
-          ${borderImageSource && `border-image-source: ${_borderImageSource};`};
+               borderTopLeftRadius || borderRadius
+                    ? `border-top-left-radius: ${_borderTopLeftRadius};`
+                    : ""
+          }
+          ${borderImageOutset ? `border-image-outset: ${_borderImageOutset};` : ""}
+          ${borderImageRepeat ? `border-image-repeat: ${_borderImageRepeat};` : ""}
+          ${borderImageSlice ? `border-image-slice: ${_borderImageSlice};` : ""}
+          ${borderImageWidth ? `border-image-width: ${_borderImageWidth};` : ""}
+          ${borderImageSource ? `border-image-source: ${_borderImageSource};` : ""}
           ${
-               boxDecorationBreak &&
-               `-webkit-box-decoration-break: ${_boxDecorationBreak};
+               boxDecorationBreak
+                    ? `-webkit-box-decoration-break: ${_boxDecorationBreak};
                -o-box-decoration-break: ${_boxDecorationBreak};
                box-decoration-break: ${_boxDecorationBreak};`
-          };
-          ${boxShadow && `box-shadow: ${_boxShadow};`};
-          ${boxSizing && `box-sizing: ${_boxSizing};`};
-          ${breakAfter && `break-after: ${_breakAfter};`};
-          ${breakInside && `break-inside: ${_breakInside};`};
-          ${breakBefore && `break-before: ${_breakBefore} ;`};
-          ${columnCount && `column-count: ${_columnCount};`};
-          ${columnFill && `column-fill: ${_columnFill};`};
-          ${columnRuleStyle && `column-rule-style: ${_columnRuleStyle};`};
-          ${columnRuleColor && `column-rule-color: ${_columnRuleColor};`};
-          ${columnRuleWidth && `column-rule-width: ${_columnRuleWidth};`};
-          ${columnSpan && `column-span: ${_columnSpan};`};
-          ${columnWidth && `column-width: ${_columnWidth};`};
-          ${cursor && `cursor: ${_cursor};`};
-          ${fontSize && `font-size: ${_fontSize};`};
-          ${fontFamily && `font-family: ${_fontFamily};`};
-          ${fontStyle && `font-style: ${_fontStyle};`};
-          ${fontWeight && `font-weight: ${_fontWeight};`};
-          ${fontStretch && `font-stretch: ${_fontStretch};`};
-          ${textAlign && `text-align: ${_textAlign};`};
-          ${textAlignLast && `text-align-last: ${_textAlignLast};`};
-          ${textJustify && `text-justify: ${_textJustify};`};
-          ${textDecorationColor && `text-decoration-color: ${_textDecorationColor};`};
-          ${textDecorationLine && `text-decoration-line: ${_textDecorationLine};`};
-          ${textDecorationStyle && `text-decoration-style: ${_textDecorationStyle};`};
-          ${display && `display: ${_display};`};
-          ${flexDirection && `flex-direction: ${_flexDirection};`};
-          ${flexBasis && `flex-basis: ${_flexBasis};`};
-          ${flexWrap && `flex-wrap: ${_flexWrap};`};
-          ${flexGrow && `flex-grow: ${_flexGrow};`};
-          ${flexShrink && `flex-shrink: ${_flexShrink};`};
-          ${gridColumnGap && `grid-column-gap: ${_gridColumnGap};`};
-          ${gridColumnGap && `column-gap: ${_columnGap};`};
-          ${gridRowGap && `grid-row-gap: ${_gridRowGap};`};
-          ${rowGap && `row-gap: ${_rowGap};`};
-          ${gridAutoColumn && `grid-auto-columns: ${_gridAutoColumns};`};
-          ${gridAutoRow && `grid-auto-rows: ${_gridAutoRows};`};
-          ${gridAutoFlow && `grid-auto-flow: ${_gridAutoFlow};`};
-          ${gridTemplateAreas && `grid-template-areas: ${_gridTemplateAreas};`};
-          ${gridRowStart && `grid-row-start: ${_gridRowStart};`};
-          ${gridRowEnd && `grid-row-end: ${_gridRowEnd};`};
-          ${gridColumnStart && `grid-column-start: ${_gridColumnStart};`};
-          ${gridColumnEnd && `grid-column-end: ${_gridColumnEnd};`};
-          ${gridTemplateRows && `grid-template-rows: ${_gridTemplateRows};`};
-          ${gridTemplateColumns && `grid-template-columns: ${_gridTemplateColumns};`};
-          ${width && `width: ${_width};`};
-          ${maxWidth && `max-width: ${_maxWidth};`};
-          ${minWidth && `min-width: ${_minWidth};`};
-          ${height && `height: ${_height};`};
-          ${maxHeight && `max-height: ${_maxHeight};`};
-          ${minHeight && `min-height: ${_minHeight};`};
-          ${top && `top: ${_top};`};
-          ${right && `right: ${_right};`};
-          ${bottom && `bottom: ${_bottom};`};
-          ${left && `left: ${_left};`};
+                    : ""
+          }
+          ${boxShadow ? `box-shadow: ${_boxShadow};` : ""}
+          ${boxSizing ? `box-sizing: ${_boxSizing};` : ""}
+          ${breakAfter ? `break-after: ${_breakAfter};` : ""}
+          ${breakInside ? `break-inside: ${_breakInside};` : ""}
+          ${breakBefore ? `break-before: ${_breakBefore} ;` : ""}
+          ${columnCount ? `column-count: ${_columnCount};` : ""}
+          ${columnFill ? `column-fill: ${_columnFill};` : ""}
+          ${columnRuleStyle ? `column-rule-style: ${_columnRuleStyle};` : ""}
+          ${columnRuleColor ? `column-rule-color: ${_columnRuleColor};` : ""}
+          ${columnRuleWidth ? `column-rule-width: ${_columnRuleWidth};` : ""}
+          ${columnSpan ? `column-span: ${_columnSpan};` : ""}
+          ${columnWidth ? `column-width: ${_columnWidth};` : ""}
+          ${cursor ? `cursor: ${_cursor};` : ""}
+          ${fontSize ? `font-size: ${_fontSize};` : ""}
+          ${fontFamily || font ? `font-family: ${_fontFamily};` : ""}
+          ${fontStyle ? `font-style: ${_fontStyle};` : ""}
+          ${fontWeight ? `font-weight: ${_fontWeight};` : ""}
+          ${fontStretch ? `font-stretch: ${_fontStretch};` : ""}
+          ${textAlign ? `text-align: ${_textAlign};` : ""}
+          ${textAlignLast ? `text-align-last: ${_textAlignLast};` : ""}
+          ${textJustify ? `text-justify: ${_textJustify};` : ""}
+          ${textDecorationColor ? `text-decoration-color: ${_textDecorationColor};` : ""}
+          ${textDecorationLine ? `text-decoration-line: ${_textDecorationLine};` : ""}
+          ${textDecorationStyle ? `text-decoration-style: ${_textDecorationStyle};` : ""}
+          ${display ? `display: ${_display};` : ""}
+          ${flexDirection ? `flex-direction: ${_flexDirection};` : ""}
+          ${flexBasis ? `flex-basis: ${_flexBasis};` : ""}
+          ${flexWrap ? `flex-wrap: ${_flexWrap};` : ""}
+          ${flexGrow ? `flex-grow: ${_flexGrow};` : ""}
+          ${flexShrink ? `flex-shrink: ${_flexShrink};` : ""}
+          ${gridColumnGap ? `grid-column-gap: ${_gridColumnGap};` : ""}
+          ${gridColumnGap ? `column-gap: ${_columnGap};` : ""}
+          ${gridRowGap ? `grid-row-gap: ${_gridRowGap};` : ""}
+          ${rowGap ? `row-gap: ${_rowGap};` : ""}
+          ${gridAutoColumn ? `grid-auto-columns: ${_gridAutoColumns};` : ""}
+          ${gridAutoRow ? `grid-auto-rows: ${_gridAutoRows};` : ""}
+          ${gridAutoFlow ? `grid-auto-flow: ${_gridAutoFlow};` : ""}
+          ${gridTemplateAreas ? `grid-template-areas: ${_gridTemplateAreas};` : ""}
+          ${gridRowStart ? `grid-row-start: ${_gridRowStart};` : ""}
+          ${gridRowEnd ? `grid-row-end: ${_gridRowEnd};` : ""}
+          ${gridColumnStart ? `grid-column-start: ${_gridColumnStart};` : ""}
+          ${gridColumnEnd ? `grid-column-end: ${_gridColumnEnd};` : ""}
+          ${gridTemplateRows ? `grid-template-rows: ${_gridTemplateRows};` : ""}
+          ${gridTemplateColumns ? `grid-template-columns: ${_gridTemplateColumns};` : ""}
+          ${width ? `width: ${_width};` : ""}
+          ${maxWidth ? `max-width: ${_maxWidth};` : ""}
+          ${minWidth ? `min-width: ${_minWidth};` : ""}
+          ${height ? `height: ${_height};` : ""}
+          ${maxHeight ? `max-height: ${_maxHeight};` : ""}
+          ${minHeight ? `min-height: ${_minHeight};` : ""}
+          ${top ? `top: ${_top};` : ""}
+          ${right ? `right: ${_right};` : ""}
+          ${bottom ? `bottom: ${_bottom};` : ""}
+          ${left ? `left: ${_left};` : ""}
           ${
-               position &&
-               `position: -webkit ${_position};
+               position
+                    ? `position: -webkit ${_position};
           position: ${_position};`
-          };
-          ${lineClamp && `line-clamp: ${_lineClamp}`};
-          ${(paddingTop || paddingVertical || padding) && `padding-top: ${_paddingTop};`};
-          ${(paddingBottom || paddingVertical || padding) && `padding-bottom: ${_paddingBottom};`};
-          ${(paddingRight || paddingHorizontal || padding) && `padding-right: ${_paddingRight};`};
-          ${(paddingLeft || paddingHorizontal || padding) && `padding-left: ${_paddingLeft};`};
+                    : ""
+          }
+          ${lineClamp ? `line-clamp: ${_lineClamp}` : ""}
+          ${paddingTop || paddingVertical || padding ? `padding-top: ${_paddingTop};` : ""}
+          ${paddingBottom || paddingVertical || padding ? `padding-bottom: ${_paddingBottom};` : ""}
+          ${paddingRight || paddingHorizontal || padding ? `padding-right: ${_paddingRight};` : ""}
+          ${paddingLeft || paddingHorizontal || padding ? `padding-left: ${_paddingLeft};` : ""}
 
-          ${(marginTop || marginVertical || margin) && `margin-top: ${_marginTop};`};
-          ${(marginBottom || marginVertical || margin) && `margin-bottom: ${_marginBottom};`};
-          ${(marginRight || marginHorizontal || margin) && `margin-right: ${_marginRight};`};
-          ${(marginLeft || marginHorizontal || margin) && `margin-left: ${_marginLeft};`};
-          ${opacity && `opacity: ${_opacity};`};
-          ${justifyContent && `justify-content: ${_justifyContent};`};
-          ${captionSide && `caption-side: ${_captionSide};`};
-          ${caretColor && `caret-color: ${_caretColor};`};
-          ${clear && `clear: ${_clear};`};
-          ${direction && `direction: ${_direction};`};
-          ${emptyCells && `empty-cells: ${_emptyCells};`};
-          ${fontKerning && `font-kerning: ${_fontKerning};`};
-          ${fontVariant && `font-variant: ${_fontVariant};`};
-          ${fontVariantCaps && `font-variant-caps: ${_fontVariantCaps};`};
-          ${hangingPunctuation && `hanging-punctuation: ${_hangingPunctuation};`};
+          ${marginTop || marginVertical || margin ? `margin-top: ${_marginTop};` : ""}
+          ${marginBottom || marginVertical || margin ? `margin-bottom: ${_marginBottom};` : ""}
+          ${marginRight || marginHorizontal || margin ? `margin-right: ${_marginRight};` : ""}
+          ${marginLeft || marginHorizontal || margin ? `margin-left: ${_marginLeft};` : ""}
+          ${opacity ? `opacity: ${_opacity};` : ""}
+          ${justifyContent ? `justify-content: ${_justifyContent};` : ""}
+          ${captionSide ? `caption-side: ${_captionSide};` : ""}
+          ${caretColor ? `caret-color: ${_caretColor};` : ""}
+          ${clear ? `clear: ${_clear};` : ""}
+          ${direction ? `direction: ${_direction};` : ""}
+          ${emptyCells ? `empty-cells: ${_emptyCells};` : ""}
+          ${fontKerning ? `font-kerning: ${_fontKerning};` : ""}
+          ${fontVariant ? `font-variant: ${_fontVariant};` : ""}
+          ${fontVariantCaps ? `font-variant-caps: ${_fontVariantCaps};` : ""}
+          ${hangingPunctuation ? `hanging-punctuation: ${_hangingPunctuation};` : ""}
           ${
-               hyphens &&
-               `-webkit-hyphens: ${_hyphens};
+               hyphens
+                    ? `-webkit-hyphens: ${_hyphens};
                -ms-hyphens: ${_hyphens};
                hyphens: ${_hyphens};`
-          };
-          ${isolation && `isolation: ${_isolation};`};
-          ${letterSpacing && `letter-spacing: ${_letterSpacing};`};
-          ${lineHeight && `line-height: ${_lineHeight};`};
-          ${listStyleImage && `list-style-image: ${_listStyleImage};`};
-          ${listStylePosition && `list-style-position: ${_listStylePosition};`};
-          ${listStyleType && `list-style-type: ${_listStyleType};`};
-          ${mixBlendMode && `mix-blend-mode: ${_mixBlendMode};`};
-          ${objectFit && `object-fit: ${_objectFit};`};
-          ${objectPosition && `object-position: ${_objectPosition};`};
-          ${order && `order: ${_order};`};
-          ${outlineColor && `outline-color: ${_outlineColor};`};
-          ${outlineOffset && `outline-offset: ${_outlineOffset};`} ;
-          ${outlineStyle && `outline-style: ${_outlineStyle};`};
-          ${outlineWidth && `outline-width: ${_outlineWidth};`};
-          ${overflow && `overflow: ${_overflow};`};
-          ${overflowX && `overflow-x: ${_overflowX};`};
-          ${overflowY && `overflow-y: ${_overflowY};`};
-          ${textOverflow && `text-overflow: ${_textOverflow};`};
-          ${textIndent && `text-indent: ${_textIndent};`};
-          ${pageBreakInside && `page-break-inside: ${_pageBreakInside};`};
-          ${pageBreakAfter && `page-break-after: ${_pageBreakAfter};`};
-          ${pageBreakBefore && `page-break-before: ${_pageBreakBefore};`};
-          ${perspective && `perspective: ${_perspective};`};
+                    : ""
+          }
+          ${isolation ? `isolation: ${_isolation};` : ""}
+          ${letterSpacing ? `letter-spacing: ${_letterSpacing};` : ""}
+          ${lineHeight ? `line-height: ${_lineHeight};` : ""}
+          ${listStyleImage ? `list-style-image: ${_listStyleImage};` : ""}
+          ${listStylePosition ? `list-style-position: ${_listStylePosition};` : ""}
+          ${listStyleType ? `list-style-type: ${_listStyleType};` : ""}
+          ${mixBlendMode ? `mix-blend-mode: ${_mixBlendMode};` : ""}
+          ${objectFit ? `object-fit: ${_objectFit};` : ""}
+          ${objectPosition ? `object-position: ${_objectPosition};` : ""}
+          ${order ? `order: ${_order};` : ""}
+          ${outlineColor || outline ? `outline-color: ${_outlineColor};` : ""}
+          ${outlineOffset || outline ? `outline-offset: ${_outlineOffset};` : ""}
+          ${outlineStyle || outline ? `outline-style: ${_outlineStyle};` : ""}
+          ${outlineWidth || outline ? `outline-width: ${_outlineWidth};` : ""}
+          ${overflow ? `overflow: ${_overflow};` : ""}
+          ${overflowX ? `overflow-x: ${_overflowX};` : ""}
+          ${overflowY ? `overflow-y: ${_overflowY};` : ""}
+          ${textOverflow ? `text-overflow: ${_textOverflow};` : ""}
+          ${textIndent ? `text-indent: ${_textIndent};` : ""}
+          ${pageBreakInside ? `page-break-inside: ${_pageBreakInside};` : ""}
+          ${pageBreakAfter ? `page-break-after: ${_pageBreakAfter};` : ""}
+          ${pageBreakBefore ? `page-break-before: ${_pageBreakBefore};` : ""}
+          ${perspective ? `perspective: ${_perspective};` : ""}
           ${
-               tabSize &&
-               `-moz-tab-size: ${_tabSize};
+               tabSize
+                    ? `-moz-tab-size: ${_tabSize};
                tab-size: ${_tabSize};`
-          };
-          ${float && `float:${_float};`};
-          ${textShadow && `text-shadow: ${_textShadow};`};
-          ${textTransform && `text-transform: ${_textTransform};`};
-          ${transform && `transform: ${_transform};`};
-          ${transformOrigin && `transform-origin: ${_transformOrigin};`};
-          ${transformStyle && `transform-style: ${_transformStyle};`};
-          ${verticalAlign && `vertical-align: ${_verticalAlign};`};
-          ${scrollBehavior && `scroll-behavior: ${_scrollBehavior};`};
-          ${visibility && `visibility: ${_visibility};`};
-          ${userSelect && `user-select: ${_userSelect};`};
-          ${whiteSpace && `white-space: ${_whiteSpace};`};
-          ${wordBreak && `word-break: ${_wordBreak};`};
-          ${wordSpacing && `word-spacing: ${_wordSpacing};`};
-          ${writingMode && `writing-mode: ${_writingMode};`};
-          ${zIndex && `z-index: ${_zIndex};`}
-          ${(animationDelay || animation) && `animation-delay:${_animationDelay};`};
-          ${(animationDirection || animation) && `animation-direction:${_animationDirection};`};
-          ${(animationDuration || animation) && `animation-duration:${_animationDuration};`};
-          ${(animationFillMode || animation) && `animation-fill-mode:${_animationFillMode};`};
+                    : ""
+          }
+          ${float ? `float:${_float};` : ""}
+          ${textShadow ? `text-shadow: ${_textShadow};` : ""}
+          ${textTransform ? `text-transform: ${_textTransform};` : ""}
+          ${transform ? `transform: ${_transform};` : ""}
+          ${transformOrigin ? `transform-origin: ${_transformOrigin};` : ""}
+          ${transformStyle ? `transform-style: ${_transformStyle};` : ""}
+          ${verticalAlign ? `vertical-align: ${_verticalAlign};` : ""}
+          ${scrollBehavior ? `scroll-behavior: ${_scrollBehavior};` : ""}
+          ${visibility ? `visibility: ${_visibility};` : ""}
+          ${userSelect ? `user-select: ${_userSelect};` : ""}
+          ${whiteSpace ? `white-space: ${_whiteSpace};` : ""}
+          ${wordBreak ? `word-break: ${_wordBreak};` : ""}
+          ${wordSpacing ? `word-spacing: ${_wordSpacing};` : ""}
+          ${writingMode ? `writing-mode: ${_writingMode};` : ""}
+          ${zIndex ? `z-index: ${_zIndex};` : ""}
+          ${animationDelay || animation ? `animation-delay:${_animationDelay};` : ""}
+          ${animationDirection || animation ? `animation-direction:${_animationDirection};` : ""}
+          ${animationDuration || animation ? `animation-duration:${_animationDuration};` : ""}
+          ${animationFillMode || animation ? `animation-fill-mode:${_animationFillMode};` : ""}
           ${
-               (animationIterationCount || animation) &&
-               `animation-iteration-count:${_animationIterationCount};`
-          };
-          ${(animationName || animation) && `animation-name:${_animationName};`};
-          ${(animationPlayState || animation) && `animation-play-state:${_animationPlayState};`};
+               animationIterationCount || animation
+                    ? `animation-iteration-count:${_animationIterationCount};`
+                    : ""
+          }
+          ${animationName || animation ? `animation-name:${_animationName};` : ""}
+          ${animationPlayState || animation ? `animation-play-state:${_animationPlayState};` : ""}
           ${
-               (animationTimingFunction || animation) &&
-               `animation-timing-function:${_animationTimingFunction};`
-          };
-          ${clip && `clip:${_clip};`};
-          ${content && `content:${_content};`};
-          ${filter && `filter:${_filter};`};
-          ${(transitionProperty || transition) && `transition-property:${_transitionProperty};`};
-          ${(transitionDelay || transition) && `transition-delay:${_transitionDelay};`};
-          ${(transitionDuration || transition) && `transition-duration:${_transitionDuration};`};
+               animationTimingFunction || animation
+                    ? `animation-timing-function:${_animationTimingFunction};`
+                    : ""
+          }
+          ${clip ? `clip:${_clip};` : ""}
+          ${content ? `content:${_content};` : ""}
+          ${filter ? `filter:${_filter};` : ""}
+          ${transitionProperty || transition ? `transition-property:${_transitionProperty};` : ""}
+          ${transitionDelay || transition ? `transition-delay:${_transitionDelay};` : ""}
+          ${transitionDuration || transition ? `transition-duration:${_transitionDuration};` : ""}
           ${
-               (transitionTimingFunction || transition) &&
-               `transition-timing-function:${_transitionTimingFunction};`
-          };
-          ${maxLines && `max-lines:${_maxLines}`}
+               transitionTimingFunction || transition
+                    ? `transition-timing-function:${_transitionTimingFunction};`
+                    : ""
+          }
+          ${maxLines ? `max-lines:${_maxLines}` : ""}
           `;
 
-          return selectorContent;
+          if (debugLogCSS)
+               console.log(
+                    selectorContent.replace(/\s/g, "").replace(/;/g, ";\n").replace(/:/g, ": ")
+               );
+
+          return selectorContent.replace(/\s/g, "").replace(/;/g, ";\n");
      }
 }
 

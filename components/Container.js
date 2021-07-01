@@ -86,6 +86,7 @@ const Container = ({
      cursor,
      direction,
      display = "flex",
+     debugLogCSS = false,
      emptyCells,
      filter,
      flex,
@@ -304,6 +305,7 @@ const Container = ({
                cursor={cursor}
                direction={direction}
                display={display}
+               debugLogCSS={debugLogCSS}
                emptyCells={emptyCells}
                filter={filter}
                flex={flex}

@@ -77,6 +77,7 @@ const Button = ({
      content,
      cursor = Cursor.Pointer,
      display,
+     debugLogCSS = false,
      emptyCells,
      filter,
      flex,
@@ -279,6 +280,7 @@ const Button = ({
                content={content}
                cursor={cursor}
                display={display}
+               debugLogCSS={debugLogCSS}
                emptyCells={emptyCells}
                filter={filter}
                flex={flex}
