@@ -95,7 +95,7 @@ const TextView = ({
      flexGrow,
      font = "inherit",
      size,
-     fontFamily = "Trebuchet MS",
+     fontFamily = "inherit",
      fontStyle,
      fontWeight,
      fontKerning,

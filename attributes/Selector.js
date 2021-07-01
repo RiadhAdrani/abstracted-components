@@ -1068,7 +1068,7 @@ class Selector {
           ${columnWidth ? `column-width: ${_columnWidth};` : ""}
           ${cursor ? `cursor: ${_cursor};` : ""}
           ${fontSize ? `font-size: ${_fontSize};` : ""}
-          ${fontFamily ? `font-family: ${_fontFamily};` : ""}
+          ${fontFamily || font ? `font-family: ${_fontFamily};` : ""}
           ${fontStyle ? `font-style: ${_fontStyle};` : ""}
           ${fontWeight ? `font-weight: ${_fontWeight};` : ""}
           ${fontStretch ? `font-stretch: ${_fontStretch};` : ""}
@@ -1216,7 +1216,10 @@ class Selector {
           ${maxLines ? `max-lines:${_maxLines}` : ""}
           `;
 
-          if (debugLogCSS) console.log(selectorContent.replace(/\s/g, "").replace(/;/g, ";\n"));
+          if (debugLogCSS)
+               console.log(
+                    selectorContent.replace(/\s/g, "").replace(/;/g, ";\n").replace(/:/g, ": ")
+               );
 
           return selectorContent.replace(/\s/g, "").replace(/;/g, ";\n");
      }
